@@ -1,0 +1,37 @@
+{
+  "name": "project-fastnick88",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastNick/project-lvl1-s388.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fastNick/project-lvl1-s388/issues"
+  },
+  "homepage": "https://github.com/fastNick/project-lvl1-s388#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
+    "@babel/preset-env": "^7.2.0"
+  },
+  "bin": {
+   "brain-games": "dist/bin/brain-games.js" 
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "nick",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
