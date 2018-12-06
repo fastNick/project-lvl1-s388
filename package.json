@@ -1,7 +1,11 @@
 {
   "name": "project-fastnick88",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Introducing to Javascript. Several console games were created",
+  "keywords": [
+    "Console games",
+    "Brain Games"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -31,5 +35,8 @@
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }

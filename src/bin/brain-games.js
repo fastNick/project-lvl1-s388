@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
-import index from '..'
+import * as braingame from '..'
+
+braingame.printCongratulation();
+
+braingame.askAboutName();
+
 
 
