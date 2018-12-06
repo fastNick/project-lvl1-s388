@@ -1,8 +1,7 @@
 {
   "name": "project-fastnick88",
   "version": "1.0.2",
-  "description": "",
-  "main": "index.js",
+  "description": "Introducing to Javascript. Several console games were created",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -12,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/fastNick/project-lvl1-s388.git"
   },
-  "author": "",
+  "author": "nick",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fastNick/project-lvl1-s388/issues"
@@ -25,12 +24,11 @@
     "@babel/preset-env": "^7.2.0"
   },
   "bin": {
-   "brain-games": "dist/bin/brain-games.js" 
+    "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
   ],
-  "author": "nick",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }
