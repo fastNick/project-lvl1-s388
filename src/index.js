@@ -56,7 +56,7 @@ export const brainGamesTask = () => {
 
 export const brainEvenTask = () => {
   const name = printWelcomeAndGetName('\nAnswer "yes" if number even otherwise answer "no". ');
-  for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i++) {
+  for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i += 1) {
     const outputQuestion = generateRandomNumber();
     console.log(`Question: ${outputQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -72,7 +72,7 @@ export const brainEvenTask = () => {
 
 export const brainCalcTask = () => {
   const name = printWelcomeAndGetName('\nWhat is the result of the expression?');
-  for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i++) {
+  for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i += 1) {
     const outputQuestion = generateRandomOperation();
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = isAnswerCorrectForBrainCalc(outputQuestion, userAnswer);
