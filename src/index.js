@@ -43,3 +43,7 @@ export const brainEvenTask = () => {
   }
   console.log(`Congratulations, ${name}!`);
 };
+
+export const brainCalcTask = () => {
+
+};
