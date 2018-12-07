@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import * as braincalc from '../..';
+import { brainCalcTask } from '../..';
 
-braincalc.brainCalcTask();
+brainCalcTask();

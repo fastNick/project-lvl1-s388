@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import * as braingame from '../..';
+import { brainGamesTask } from '../..';
 
-braingame.brainGamesTask();
+brainGamesTask();
