@@ -1,15 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const dictionaryAnswers = { true: 'yes', false: 'no' };
+import * as constants from './constants';
 
-const numberOfQuestions = 3;
-const maxNumberForRandomValues = 20;
-const mathOperationsArray = ['+', '-', '*'];
 
 const isNumberEven = number => number % 2 === 0;
 
 const printMessageOnWrongAnswerForBrainEven = (name, answer, number) => {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dictionaryAnswers[isNumberEven(number)]}'. \n`
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${constants.DICTIONARY_ANSWERS[isNumberEven(number)]}'. \n`
         + `Let's try again, ${name}!`);
 };
 
@@ -18,14 +15,14 @@ const printMessageOnWrongAnswerForBrainCalc = (name, answer, number) => {
         + `Let's try again, ${name}!`);
 };
 
-const generateRandomNumber = () => Math.floor(Math.random() * maxNumberForRandomValues);
+const generateRandomNumber = () => Math.floor(Math.random() * constants.MAXNUMBER_FOR_RANDOMVALUES);
 
 const generateRandomOperator = mathOperations => mathOperations[Math.floor(Math.random() * mathOperations.length)];
 
 const generateRandomOperation = () => {
-  const firstOperand = generateRandomNumber(maxNumberForRandomValues);
-  const secondOperand = generateRandomNumber(maxNumberForRandomValues);
-  const mathOperation = generateRandomOperator(mathOperationsArray);
+  const firstOperand = generateRandomNumber(constants.MAXNUMBER_FOR_RANDOMVALUES);
+  const secondOperand = generateRandomNumber(constants.MAXNUMBER_FOR_RANDOMVALUES);
+  const mathOperation = generateRandomOperator(constants.MATH_OPERATIONS_ARRAY);
 
   console.log(`Question: ${firstOperand} ${mathOperation} ${secondOperand}`);
 
@@ -39,7 +36,7 @@ const generateRandomOperation = () => {
   }
 };
 
-const isAnswerCorrectForBrainEven = (number, answerText) => answerText === dictionaryAnswers[isNumberEven(number)];
+const isAnswerCorrectForBrainEven = (number, answerText) => answerText === constants.DICTIONARY_ANSWERS[isNumberEven(number)];
 
 const isAnswerCorrectForBrainCalc = (number, answerText) => Number.parseInt(answerText, 0) === number;
 
@@ -59,7 +56,7 @@ export const brainGamesTask = () => {
 
 export const brainEvenTask = () => {
   const name = printWelcomeAndGetName('\nAnswer "yes" if number even otherwise answer "no". ');
-  for (let i = 0; i < numberOfQuestions; i++) {
+  for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i++) {
     const outputQuestion = generateRandomNumber();
     console.log(`Question: ${outputQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -75,7 +72,7 @@ export const brainEvenTask = () => {
 
 export const brainCalcTask = () => {
   const name = printWelcomeAndGetName('\nWhat is the result of the expression?');
-  for (let i = 0; i < numberOfQuestions; i++) {
+  for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i++) {
     const outputQuestion = generateRandomOperation();
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = isAnswerCorrectForBrainCalc(outputQuestion, userAnswer);
