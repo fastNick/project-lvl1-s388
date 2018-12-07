@@ -14,11 +14,7 @@ const printMessageOnWrongAnswer = (name, answer, number) => {
 
 const generateRandomNumber = maxNumber => Math.floor(Math.random() * maxNumber);
 
-const isAnswerCorrect = (number, answerText) => {
-  const isEven = isNumberEven(number);
-  return (isEven && answerText === dictionaryAnswers[isEven])
-  || (!isEven && answerText === dictionaryAnswers[isEven]);
-};
+const isAnswerCorrect = (number, answerText) => answerText === dictionaryAnswers[isNumberEven(number)];
 
 export const brainGamesTask = () => {
   console.log('Welcome to the Brain Games!');
