@@ -1,42 +1,39 @@
 import readlineSync from 'readline-sync';
 
-const dictionaryAnswers = {};
+const dictionaryAnswers = { true: 'yes', false: 'no' };
 
-export const initializeAnswers = () => {
-  dictionaryAnswers.true = 'yes';
-  dictionaryAnswers.false = 'no';
-};
+const numberOfQuestions = 3;
+const maxNumberForRandomValues = 20;
 
-export const printCongratulation = (message) => {
-  console.log(message);
-};
-
-export const askAboutName = () => readlineSync.question('May I have your name?');
-
-export const printUserCongratulation = (name) => {
-  console.log(`Hello, ${name}!`);
-};
-
-const successfulGameCongratulation = (name) => {
-  console.log(`Congratulations, ${name}!`);
-};
+const isNumberEven = number => number % 2 === 0;
 
 const printMessageOnWrongAnswer = (name, answer, number) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dictionaryAnswers[isNumberEven(number)]}'. \n`
         + `Let's try again, ${name}!`);
 };
 
-const printMessageOnRightAnswer = (name) => {
-  console.log('Correct!');
-};
-
 const generateRandomNumber = maxNumber => Math.floor(Math.random() * maxNumber);
 
-const isNumberEven = number => number % 2 == 0;
+const isAnswerCorrect = (number, answerText) => {
+  const isEven = isNumberEven(number);
+  return (isEven && answerText === dictionaryAnswers[isEven])
+  || (!isEven && answerText === dictionaryAnswers[isEven]);
+};
 
-const isAnswerCorrect = (number, answerText) => isNumberEven(number) && answerText === 'yes' || !isNumberEven(number) && answerText === 'no';
+export const brainGamesTask = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${name}!`);
+};
 
-export const giveTask = (numberOfQuestions, maxNumberForRandomValues, name) => {
+
+export const brainEvenTask = () => {
+  console.log('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".');
+
+  const name = readlineSync.question('May I have your name?');
+
+  console.log(`Hello, ${name}!`);
+
   for (let i = 0; i < numberOfQuestions; i++) {
     const randomNumber = generateRandomNumber(maxNumberForRandomValues);
     console.log(`Question: ${randomNumber}`);
@@ -46,7 +43,7 @@ export const giveTask = (numberOfQuestions, maxNumberForRandomValues, name) => {
       printMessageOnWrongAnswer(name, userAnswer, randomNumber);
       return;
     }
-    printMessageOnRightAnswer(name);
+    console.log('Correct!');
   }
-  successfulGameCongratulation(name);
+  console.log(`Congratulations, ${name}!`);
 };
