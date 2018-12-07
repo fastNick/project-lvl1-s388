@@ -50,7 +50,7 @@ const printWelcomeAndGetName = (additionalPhrase) => {
 };
 
 export const brainGamesTask = () => {
-  printWelcomeAndGetName();
+  printWelcomeAndGetName('');
 };
 
 
