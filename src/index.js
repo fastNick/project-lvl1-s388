@@ -17,7 +17,8 @@ const printMessageOnWrongAnswerForBrainCalc = (name, answer, number) => {
 
 const generateRandomNumber = () => Math.floor(Math.random() * constants.MAXNUMBER_FOR_RANDOMVALUES);
 
-const generateRandomOperator = mathOperations => mathOperations[Math.floor(Math.random() * mathOperations.length)];
+const generateRandomOperator = mathOperations => mathOperations[Math.floor(Math.random()
+* mathOperations.length)];
 
 const generateRandomOperation = () => {
   const firstOperand = generateRandomNumber(constants.MAXNUMBER_FOR_RANDOMVALUES);
@@ -36,9 +37,11 @@ const generateRandomOperation = () => {
   }
 };
 
-const isAnswerCorrectForBrainEven = (number, answerText) => answerText === constants.DICTIONARY_ANSWERS[isNumberEven(number)];
+const isAnswerCorrectForBrainEven = (number, answerText) => answerText
+=== constants.DICTIONARY_ANSWERS[isNumberEven(number)];
 
-const isAnswerCorrectForBrainCalc = (number, answerText) => Number.parseInt(answerText, 0) === number;
+const isAnswerCorrectForBrainCalc = (number, answerText) => Number.parseInt(answerText, 0)
+=== number;
 
 const printWelcomeAndGetName = (additionalPhrase) => {
   console.log(`Welcome to the Brain Games! ${additionalPhrase}`);

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { brainEvenTask } from '../..';
+import { brainEvenTask } from '..';
 
 brainEvenTask();
