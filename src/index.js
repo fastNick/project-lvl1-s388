@@ -1,61 +1,52 @@
-import readlineSync from 'readline-sync'
+import readlineSync from 'readline-sync';
 
-let dictionaryAnswers = {};
+const dictionaryAnswers = {};
 
 export const initializeAnswers = () => {
-    dictionaryAnswers[true] = "yes";
-    dictionaryAnswers[false] = "no";
-}
-
-export const printCongratulation = (message) => {
-    console.log(message);
+  dictionaryAnswers.true = 'yes';
+  dictionaryAnswers.false = 'no';
 };
 
-export const askAboutName = () => {
-    return readlineSync.question('May I have your name?'); 
-}
+export const printCongratulation = (message) => {
+  console.log(message);
+};
 
-export const printUserCongratulation = (name) => { 
-    console.log('Hello, ' + name + '!');
-}
+export const askAboutName = () => readlineSync.question('May I have your name?');
+
+export const printUserCongratulation = (name) => {
+  console.log(`Hello, ${name}!`);
+};
 
 const successfulGameCongratulation = (name) => {
-    console.log("Congratulations, " + name + "!");
-}
+  console.log(`Congratulations, ${name}!`);
+};
 
 const printMessageOnWrongAnswer = (name, answer, number) => {
-
-    console.log("'" + answer + "' is wrong answer ;(. Correct answer was '" + dictionaryAnswers[isNumberEven(number)] + "'. \n"+
-        "Let's try again, " + name + "!");
-}
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${dictionaryAnswers[isNumberEven(number)]}'. \n`
+        + `Let's try again, ${name}!`);
+};
 
 const printMessageOnRightAnswer = (name) => {
-    console.log("Correct!");
-}
+  console.log('Correct!');
+};
 
-const generateRandomNumber = (maxNumber) => {
-    return Math.floor(Math.random() * maxNumber);
-}
+const generateRandomNumber = maxNumber => Math.floor(Math.random() * maxNumber);
 
-const isNumberEven = (number) => {
-    return number % 2 == 0;
-}
+const isNumberEven = number => number % 2 == 0;
 
-const isAnswerCorrect = (number, answerText) => {
-    return isNumberEven(number) && answerText === "yes" || !isNumberEven(number) && answerText === "no";
-} 
+const isAnswerCorrect = (number, answerText) => isNumberEven(number) && answerText === 'yes' || !isNumberEven(number) && answerText === 'no';
 
 export const giveTask = (numberOfQuestions, maxNumberForRandomValues, name) => {
-    for(var i = 0; i<numberOfQuestions; i++){
-        let randomNumber = generateRandomNumber(maxNumberForRandomValues);
-        console.log("Question: " + randomNumber);
-        var userAnswer = readlineSync.question('Your answer: '); 
-        let correctAnswer = isAnswerCorrect(randomNumber, userAnswer);
-        if(!correctAnswer){
-            printMessageOnWrongAnswer(name, userAnswer, randomNumber);
-            return;
-        }
-        printMessageOnRightAnswer(name);
+  for (let i = 0; i < numberOfQuestions; i++) {
+    const randomNumber = generateRandomNumber(maxNumberForRandomValues);
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    const correctAnswer = isAnswerCorrect(randomNumber, userAnswer);
+    if (!correctAnswer) {
+      printMessageOnWrongAnswer(name, userAnswer, randomNumber);
+      return;
     }
-    successfulGameCongratulation(name);
-}
+    printMessageOnRightAnswer(name);
+  }
+  successfulGameCongratulation(name);
+};
