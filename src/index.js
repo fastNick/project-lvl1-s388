@@ -7,8 +7,8 @@ export const initializeAnswers = () => {
     dictionaryAnswers[false] = "no";
 }
 
-export const printCongratulation = () => {
-    console.log('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".');
+export const printCongratulation = (message) => {
+    console.log(message);
 };
 
 export const askAboutName = () => {

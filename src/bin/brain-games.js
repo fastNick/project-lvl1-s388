@@ -2,7 +2,7 @@
 
 import * as braingame from '..'
 
-braingame.printCongratulation();
+braingame.printCongratulation("Welcome to the Brain Games!");
  
 const name = braingame.askAboutName();
 

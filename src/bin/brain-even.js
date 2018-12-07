@@ -7,7 +7,7 @@ const maxNumberForRandomValues = 20;
 
 braineven.initializeAnswers();
 
-braineven.printCongratulation();
+braineven.printCongratulation('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".');
  
 const name = braineven.askAboutName();
 
