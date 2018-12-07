@@ -3,8 +3,10 @@
 import * as braingame from '..'
 
 braingame.printCongratulation();
+ 
+const name = braingame.askAboutName();
 
-braingame.askAboutName();
+braingame.printUserCongratulation(name);
 
 
 
