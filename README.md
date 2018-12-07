@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.org/fastNick/project-lvl1-s388.svg?branch=master)](https://travis-ci.org/fastNick/project-lvl1-s388)
 
-[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+[![asciicast](https://asciinema.org/a/R3i09WIxBmPnr8Oc7sbHMzKD8.svg)](https://asciinema.org/a/R3i09WIxBmPnr8Oc7sbHMzKD8)
