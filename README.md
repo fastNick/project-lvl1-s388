@@ -1,4 +1,4 @@
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e89a23bda230f4d5af10/test_coverage)](https://codeclimate.com/github/fastNick/project-lvl1-s388/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e89a23bda230f4d5af10/maintainability)](https://codeclimate.com/github/fastNick/project-lvl1-s388/maintainability)
 
 [![Build Status](https://travis-ci.org/fastNick/project-lvl1-s388.svg?branch=master)](https://travis-ci.org/fastNick/project-lvl1-s388)
 
