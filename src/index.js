@@ -7,11 +7,9 @@ import * as constants from './constants';
 
 const outputWelcome = (typeOfGame) => {
   if (typeOfGame === constants.EVEN_GAMETYPE) {
-    console.log(evenGame.outputWelcome);
+    return evenGame.outputWelcome;
   }
-  if (typeOfGame === constants.CALC_GAMETYPE) {
-    console.log(calcGame.outputWelcome);
-  }
+  return calcGame.outputWelcome;
 };
 
 const getQuestion = (typeOfGame) => {
@@ -36,6 +34,15 @@ const checkAnswer = (typeOfGame, userAnswer, correctAnswer) => {
   return calcGame.checkAnswer(userAnswer, correctAnswer);
 };
 
+const outputForWrongAnswer = (typeOfGame, userAnswer, correctAnswer, userName) => {
+  if (typeOfGame === constants.EVEN_GAMETYPE) {
+    console.log(evenGame.outputForWrongAnswer(userAnswer, correctAnswer, userName));
+  }
+  if (typeOfGame === constants.CALC_GAMETYPE) {
+    console.log(calcGame.outputForWrongAnswer(userAnswer, correctAnswer, userName));
+  }
+};
+
 export const introduceUser = () => {
   const userName = readlineSync.question('\nMay I have your name?');
   console.log(`Hello, ${userName}!\n`);
@@ -43,7 +50,7 @@ export const introduceUser = () => {
 };
 
 export const gameRunner = (typeOfGame) => {
-  outputWelcome(typeOfGame);
+  console.log(outputWelcome(typeOfGame));
   const userName = introduceUser();
   for (let i = 0; i < constants.NUMBER_OF_QUESTIONS; i += 1) {
     const question = getQuestion(typeOfGame);
@@ -51,8 +58,7 @@ export const gameRunner = (typeOfGame) => {
     const correctAnswer = getCorrectAnswer(typeOfGame, question);
     const isAnswerCorrect = checkAnswer(typeOfGame, userAnswer, correctAnswer);
     if (!isAnswerCorrect) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n`
-        + `Let's try again, ${userName}!`);
+      outputForWrongAnswer(typeOfGame, userAnswer, correctAnswer, userName);
       return;
     }
     console.log('Correct!');

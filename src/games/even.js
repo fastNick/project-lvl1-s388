@@ -13,3 +13,6 @@ const isNumberEven = number => number % 2 === 0;
 export const getCorrectAnswer = question => constants.DICTIONARY_ANSWERS[isNumberEven(question)];
 
 export const checkAnswer = (answerText, correctAnswer) => answerText === correctAnswer;
+
+export const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n`
++ `Let's try again, ${userName}!`;

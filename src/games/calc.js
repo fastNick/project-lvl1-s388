@@ -31,3 +31,6 @@ export const getCorrectAnswer = () => {
 
 export const checkAnswer = (answerText, correctAnswer) => Number.parseInt(answerText, 0)
 === correctAnswer;
+
+export const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. \n`
++ `Let's try again, ${userName}!`;
