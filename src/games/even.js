@@ -2,8 +2,6 @@ import * as gameEngine from '..';
 
 import * as constants from '../constants';
 
-export const outputWelcomeText = '\nWelcome to the Brain Games!';
-
 export const gameDescriptionText = '\nAnswer "yes" if number even otherwise answer "no".';
 
 const isNumberEven = number => number % 2 === 0;

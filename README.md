@@ -6,4 +6,7 @@
 [![asciicast](https://asciinema.org/a/6ZaIEtE1gHlkezdH5R6M70Drr.svg)](https://asciinema.org/a/6ZaIEtE1gHlkezdH5R6M70Drr)
 
 <!-- Brain calc cast -->
-[![asciicast](https://asciinema.org/a/Ol4guuW70pYnZMu9447DAbQEg.svg)](https://asciinema.org/a/Ol4guuW70pYnZMu9447DAbQEg)
+[![asciicast](https://asciinema.org/a/vp5TALX1AkY1fgGUWmfLRA8vl.svg)](https://asciinema.org/a/vp5TALX1AkY1fgGUWmfLRA8vl)
+
+<!-- Brain gcd cast -->
+[![asciicast](https://asciinema.org/a/TEHQYKMQp0PdE3r1uXyarfmUs.svg)](https://asciinema.org/a/TEHQYKMQp0PdE3r1uXyarfmUs)
