@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import * as gameTask from '..';
-import { EVEN_GAMETYPE } from '../constants';
+import * as gameTask from '../games/even';
 
-gameTask.gameRunner(EVEN_GAMETYPE);
+gameTask.gameRunner();

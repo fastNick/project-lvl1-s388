@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import * as gameTask from '..';
-import { CALC_GAMETYPE } from '../constants';
+import * as gameTask from '../games/calc';
 
-gameTask.gameRunner(CALC_GAMETYPE);
+gameTask.gameRunner();

@@ -1,18 +1,21 @@
+import * as gameEngine from '..';
+
 import * as constants from '../constants';
 
-export const outputWelcome = '\nWelcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".';
+export const outputWelcomeText = '\nWelcome to the Brain Games!';
 
-export const getQuestion = () => {
-  const outputQuestion = Math.floor(Math.random() * constants.MAXNUMBER_FOR_RANDOMVALUES);
-  console.log(outputQuestion);
-  return outputQuestion;
-};
+export const gameDescriptionText = '\nAnswer "yes" if number even otherwise answer "no".';
 
 const isNumberEven = number => number % 2 === 0;
 
-export const getCorrectAnswer = question => constants.DICTIONARY_ANSWERS[isNumberEven(question)];
+export const getQuestionAndSystemAnswer = () => {
+  const outputQuestion = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
+  console.log(outputQuestion);
+  const answer = constants.DICTIONARY_ANSWERS[isNumberEven(outputQuestion)];
+  return answer;
+};
 
-export const checkAnswer = (answerText, correctAnswer) => answerText === correctAnswer;
-
-export const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n`
-+ `Let's try again, ${userName}!`;
+export const gameRunner = () => {
+  gameEngine.implementGameLogic(gameDescriptionText, getQuestionAndSystemAnswer,
+    constants.NUMBER_OF_QUESTIONS);
+};

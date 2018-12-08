@@ -1,24 +1,17 @@
 import * as constants from '../constants';
 
-export const outputWelcome = '\nWelcome to the Brain Games! \nWhat is the result of the expression?';
+import * as gameEngine from '..';
 
-let firstOperand;
-let secondOperand;
-let mathOperation;
+export const gameDescriptionText = ' \nWhat is the result of the expression?';
 
-const generateRandomNumber = () => Math.floor(Math.random() * constants.MAXNUMBER_FOR_RANDOMVALUES);
+const generateRandomOperator = operatorsList => gameEngine.getRandomElementInArray(operatorsList);
 
-const generateRandomOperator = () => constants.MATH_OPERATIONS_ARRAY[Math.floor(Math.random()
-    * constants.MATH_OPERATIONS_ARRAY.length)];
-
-export const getQuestion = () => {
-  firstOperand = generateRandomNumber();
-  secondOperand = generateRandomNumber();
-  mathOperation = generateRandomOperator();
+export const getQuestionAndSystemAnswer = () => {
+  const firstOperand = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
+  const secondOperand = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
+  const mathOperation = generateRandomOperator(constants.MATH_OPERATIONS_ARRAY);
   console.log(`Question: ${firstOperand} ${mathOperation} ${secondOperand}`);
-};
 
-export const getCorrectAnswer = () => {
   switch (mathOperation) {
     case '+':
       return firstOperand + secondOperand;
@@ -29,8 +22,7 @@ export const getCorrectAnswer = () => {
   }
 };
 
-export const checkAnswer = (answerText, correctAnswer) => Number.parseInt(answerText, 0)
-=== correctAnswer;
-
-export const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. \n`
-+ `Let's try again, ${userName}!`;
+export const gameRunner = () => {
+  gameEngine.implementGameLogic(gameDescriptionText, getQuestionAndSystemAnswer,
+    constants.NUMBER_OF_QUESTIONS);
+};
