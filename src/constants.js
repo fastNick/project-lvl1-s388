@@ -1,3 +1,6 @@
+export const EVEN_GAMETYPE = 'even';
+export const CALC_GAMETYPE = 'calc';
+
 export const DICTIONARY_ANSWERS = { true: 'yes', false: 'no' };
 
 export const NUMBER_OF_QUESTIONS = 3;

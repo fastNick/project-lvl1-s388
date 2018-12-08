@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import { brainCalcTask } from '..';
+import * as gameTask from '..';
+import { CALC_GAMETYPE } from '../constants';
 
-brainCalcTask();
+gameTask.gameRunner(CALC_GAMETYPE);

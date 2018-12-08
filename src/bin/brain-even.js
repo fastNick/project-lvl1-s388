@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import { brainEvenTask } from '..';
+import * as gameTask from '..';
+import { EVEN_GAMETYPE } from '../constants';
 
-brainEvenTask();
+gameTask.gameRunner(EVEN_GAMETYPE);
