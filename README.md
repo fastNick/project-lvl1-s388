@@ -10,3 +10,6 @@
 
 <!-- Brain gcd cast -->
 [![asciicast](https://asciinema.org/a/TEHQYKMQp0PdE3r1uXyarfmUs.svg)](https://asciinema.org/a/TEHQYKMQp0PdE3r1uXyarfmUs)
+
+<!-- Brain arithmetic progression cast -->
+[![asciicast](https://asciinema.org/a/V06g6TQnxfVJFPtZkWXdviiwG.svg)](https://asciinema.org/a/V06g6TQnxfVJFPtZkWXdviiwG)

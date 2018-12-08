@@ -1,6 +1,6 @@
 {
   "name": "project-fastnick88",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Introducing to Javascript. Several console games were created",
   "keywords": [
     "Console games",
@@ -36,7 +36,8 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js"
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-arithmetic-progression": "dist/bin/brain-arithmetic-progression.js"
   },
   "files": [
     "dist"
