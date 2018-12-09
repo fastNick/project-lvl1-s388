@@ -4,15 +4,16 @@ import { generateRandomNumber } from '../utils';
 
 const description = ' \nWhat is the result of the expression?';
 
-const maxnumberForRandomvalue = 20;
+const upperLimit = 20;
+const lowerLimit = 0;
 
 const operationsArray = ['+', '-', '*'];
 
 const generateRandomOperator = array => array[generateRandomNumber(0, array.length)];
 
 const getQuestionAnswerPair = () => {
-  const firstOperand = generateRandomNumber(0, maxnumberForRandomvalue);
-  const secondOperand = generateRandomNumber(0, maxnumberForRandomvalue);
+  const firstOperand = generateRandomNumber(lowerLimit, upperLimit);
+  const secondOperand = generateRandomNumber(lowerLimit, upperLimit);
   const mathOperation = generateRandomOperator(operationsArray);
   let operationResult;
 

@@ -4,7 +4,8 @@ import { generateRandomNumber } from '../utils';
 
 const description = '\nFind the greatest common divisor of given numbers.';
 
-const maxnumberForRandomvalue = 20;
+const upperLimit = 20;
+const lowerLimit = 0;
 
 const gcdRec = (firstNumber, secondNumber) => {
   if (secondNumber) {
@@ -14,8 +15,8 @@ const gcdRec = (firstNumber, secondNumber) => {
 };
 
 const getQuestionAnswerPair = () => {
-  const firstNumber = generateRandomNumber(0, maxnumberForRandomvalue);
-  const secondNumber = generateRandomNumber(0, maxnumberForRandomvalue);
+  const firstNumber = generateRandomNumber(lowerLimit, upperLimit);
+  const secondNumber = generateRandomNumber(lowerLimit, upperLimit);
   const gcd = gcdRec(firstNumber, secondNumber);
   return { question: (`${firstNumber} ${secondNumber}`), answer: gcd };
 };

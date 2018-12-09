@@ -8,10 +8,11 @@ const dictionaryAnswers = { true: 'yes', false: 'no' };
 
 const isNumberEven = number => number % 2 === 0;
 
-const maxnumberForRandomvalue = 20;
+const upperLimit = 20;
+const lowerLimit = 0;
 
 const getQuestionAnswerPair = () => {
-  const outputQuestion = generateRandomNumber(0, maxnumberForRandomvalue);
+  const outputQuestion = generateRandomNumber(lowerLimit, upperLimit);
   const operationResult = dictionaryAnswers[isNumberEven(outputQuestion)];
   return { question: outputQuestion, answer: operationResult };
 };
