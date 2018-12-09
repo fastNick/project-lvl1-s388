@@ -4,7 +4,6 @@ import { generateRandomNumber } from '../utils';
 
 const gameName = 'GCD';
 
-const description = '\nFind the greatest common divisor of given numbers.';
 
 const upperLimit = 20;
 const lowerLimit = 0;
@@ -24,7 +23,7 @@ const getQuestionAnswerPair = () => {
 };
 
 export const gameRunner = () => {
-  implementGameLogic(description, getQuestionAnswerPair, gameName);
+  implementGameLogic(getQuestionAnswerPair, gameName);
 };
 
 export default gameRunner;

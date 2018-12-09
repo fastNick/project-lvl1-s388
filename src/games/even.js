@@ -4,8 +4,6 @@ import { generateRandomNumber } from '../utils';
 
 const gameName = 'EVEN';
 
-const description = '\nAnswer "yes" if number even otherwise answer "no".';
-
 const dictionaryAnswers = { true: 'yes', false: 'no' };
 
 const isNumberEven = number => number % 2 === 0;
@@ -20,7 +18,7 @@ const getQuestionAnswerPair = () => {
 };
 
 export const gameRunner = () => {
-  implementGameLogic(description, getQuestionAnswerPair, gameName);
+  implementGameLogic(getQuestionAnswerPair, gameName);
 };
 
 export default gameRunner;
