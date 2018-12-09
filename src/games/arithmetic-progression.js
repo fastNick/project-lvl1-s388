@@ -2,6 +2,8 @@ import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
+const gameName = 'ARITHEMIC PROGRESSION';
+
 const description = '\nWhat number is missing in the progression?';
 
 const sequenceLength = 10;
@@ -37,7 +39,7 @@ const getQuestionAnswerPair = () => {
 };
 
 export const gameRunner = () => {
-  implementGameLogic(description, getQuestionAnswerPair);
+  implementGameLogic(description, getQuestionAnswerPair, gameName);
 };
 
 export default gameRunner;

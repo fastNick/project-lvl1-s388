@@ -2,6 +2,8 @@ import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
+const gameName = 'CALC';
+
 const description = ' \nWhat is the result of the expression?';
 
 const upperLimit = 20;
@@ -31,7 +33,7 @@ const getQuestionAnswerPair = () => {
 };
 
 export const gameRunner = () => {
-  implementGameLogic(description, getQuestionAnswerPair);
+  implementGameLogic(description, getQuestionAnswerPair, gameName);
 };
 
 export default gameRunner;
