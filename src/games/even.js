@@ -1,19 +1,19 @@
 import * as gameEngine from '..';
 
-import * as constants from '../constants';
+const description = '\nAnswer "yes" if number even otherwise answer "no".';
 
-export const gameDescriptionText = '\nAnswer "yes" if number even otherwise answer "no".';
+const dictionaryAnswers = { true: 'yes', false: 'no' };
 
 const isNumberEven = number => number % 2 === 0;
 
-export const getQuestionAndSystemAnswer = () => {
-  const outputQuestion = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
-  console.log(outputQuestion);
-  const answer = constants.DICTIONARY_ANSWERS[isNumberEven(outputQuestion)];
-  return answer;
+const maxnumberForRandomvalue = 20;
+
+export const getQuestionAnswerPair = () => {
+  const outputQuestion = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+  const operationResult = dictionaryAnswers[isNumberEven(outputQuestion)];
+  return { question: outputQuestion, answer: operationResult };
 };
 
 export const gameRunner = () => {
-  gameEngine.implementGameLogic(gameDescriptionText, getQuestionAndSystemAnswer,
-    constants.NUMBER_OF_QUESTIONS);
+  gameEngine.implementGameLogic(description, getQuestionAnswerPair);
 };

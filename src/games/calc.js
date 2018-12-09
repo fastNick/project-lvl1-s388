@@ -1,28 +1,32 @@
-import * as constants from '../constants';
-
 import * as gameEngine from '..';
 
-export const gameDescriptionText = ' \nWhat is the result of the expression?';
+const description = ' \nWhat is the result of the expression?';
+
+const maxnumberForRandomvalue = 20;
+
+const operationsArray = ['+', '-', '*'];
 
 const generateRandomOperator = operatorsList => gameEngine.getRandomElementInArray(operatorsList);
 
-export const getQuestionAndSystemAnswer = () => {
-  const firstOperand = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
-  const secondOperand = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
-  const mathOperation = generateRandomOperator(constants.MATH_OPERATIONS_ARRAY);
-  console.log(`Question: ${firstOperand} ${mathOperation} ${secondOperand}`);
+export const getQuestionAnswerPair = () => {
+  const firstOperand = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+  const secondOperand = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+  const mathOperation = generateRandomOperator(operationsArray);
+  let operationResult;
 
   switch (mathOperation) {
     case '+':
-      return firstOperand + secondOperand;
+      operationResult = firstOperand + secondOperand;
+      break;
     case '-':
-      return firstOperand - secondOperand;
+      operationResult = firstOperand - secondOperand;
+      break;
     default:
-      return firstOperand * secondOperand;
+      operationResult = firstOperand * secondOperand;
   }
+  return { question: `Question: ${firstOperand} ${mathOperation} ${secondOperand}`, answer: operationResult };
 };
 
 export const gameRunner = () => {
-  gameEngine.implementGameLogic(gameDescriptionText, getQuestionAndSystemAnswer,
-    constants.NUMBER_OF_QUESTIONS);
+  gameEngine.implementGameLogic(description, getQuestionAnswerPair);
 };

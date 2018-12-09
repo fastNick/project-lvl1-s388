@@ -1,10 +1,8 @@
 import * as gameEngine from '..';
 
-import * as constants from '../constants';
+const description = '\nFind the greatest common divisor of given numbers.';
 
-export const outputWelcomeText = '\nWelcome to the Brain Games!';
-
-export const gameDescriptionText = '\nFind the greatest common divisor of given numbers.';
+const maxnumberForRandomvalue = 20;
 
 const getGCD = (firstNumber, secondNumber) => {
   let absFirstNumber = Math.abs(firstNumber);
@@ -20,17 +18,13 @@ const getGCD = (firstNumber, secondNumber) => {
   }
 };
 
-export const getQuestionAndSystemAnswer = () => {
-  const firstNumber = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
-  const secondNumber = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
+export const getQuestionAnswerPair = () => {
+  const firstNumber = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+  const secondNumber = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
   const gcd = getGCD(firstNumber, secondNumber);
-  const outputQuestion = (`${firstNumber} ${secondNumber}`);
-  console.log(outputQuestion);
-  const answer = gcd;
-  return answer;
+  return { question: (`${firstNumber} ${secondNumber}`), answer: gcd };
 };
 
 export const gameRunner = () => {
-  gameEngine.implementGameLogic(gameDescriptionText, getQuestionAndSystemAnswer,
-    constants.NUMBER_OF_QUESTIONS);
+  gameEngine.implementGameLogic(description, getQuestionAnswerPair);
 };

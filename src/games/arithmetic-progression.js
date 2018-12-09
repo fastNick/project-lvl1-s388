@@ -1,12 +1,10 @@
 import * as gameEngine from '..';
 
-import * as constants from '../constants';
+const description = '\nWhat number is missing in the progression?';
 
-export const outputWelcomeText = '\nWelcome to the Brain Games!';
+const arithmeticProgressionArrayLength = 10;
 
-export const gameDescriptionText = '\nWhat number is missing in the progression?';
-
-export const arithmeticProgressionArrayLength = 10;
+const maxnumberForRandomvalue = 20;
 
 const generateArithmeticProgression = (firstNumber, commonDifference, lengthOfArray) => {
   const numbersArray = [];
@@ -26,19 +24,15 @@ const outputArrayAsString = (numbersArray, indexInArray) => {
   return stringSequence;
 };
 
-export const getQuestionAndSystemAnswer = () => {
-  const firstNumber = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
-  const commonDifference = gameEngine.generateRandomNumber(0, constants.MAXNUMBER_FOR_RANDOMVALUES);
-  const numbersArray = generateArithmeticProgression(firstNumber, commonDifference,
+export const getQuestionAnswerPair = () => {
+  const firstNumber = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+  const commonDifference = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+  const array = generateArithmeticProgression(firstNumber, commonDifference,
     arithmeticProgressionArrayLength);
-  const randomIndexInArray = gameEngine.generateRandomNumber(0, numbersArray.length);
-  const outputQuestion = outputArrayAsString(numbersArray, randomIndexInArray);
-  console.log(outputQuestion);
-  const answer = numbersArray[randomIndexInArray];
-  return answer;
+  const randomIndex = gameEngine.generateRandomNumber(0, array.length);
+  return { question: outputArrayAsString(array, randomIndex), answer: array[randomIndex] };
 };
 
 export const gameRunner = () => {
-  gameEngine.implementGameLogic(gameDescriptionText, getQuestionAndSystemAnswer,
-    constants.NUMBER_OF_QUESTIONS);
+  gameEngine.implementGameLogic(description, getQuestionAnswerPair);
 };
