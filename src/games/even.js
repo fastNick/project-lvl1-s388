@@ -2,7 +2,7 @@ import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
-const gameName = 'CALC';
+const gameName = 'EVEN';
 
 const description = '\nAnswer "yes" if number even otherwise answer "no".';
 
