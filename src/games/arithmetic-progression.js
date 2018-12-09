@@ -2,21 +2,23 @@ import * as gameEngine from '..';
 
 const description = '\nWhat number is missing in the progression?';
 
-const arithmeticProgressionArrayLength = 10;
+const sequenceLength = 10;
 
-const maxnumberForRandomvalue = 20;
+const lowerLimit = -20;
+const upperLimit = 20;
 
-const generateArithmeticProgression = (firstNumber, commonDifference, lengthOfArray) => {
+
+const generateArithmeticProgression = (firstNumber, commonDifference) => {
   const numbersArray = [];
   let elementOfArray = firstNumber;
-  for (let i = 0; i < lengthOfArray; i += 1) {
+  for (let i = 0; i < sequenceLength; i += 1) {
     numbersArray.push(elementOfArray);
     elementOfArray += commonDifference;
   }
   return numbersArray;
 };
 
-const outputArrayAsString = (numbersArray, indexInArray) => {
+const getQuestion = (numbersArray, indexInArray) => {
   let stringSequence = '';
   for (let i = 0; i < numbersArray.length; i += 1) {
     stringSequence += i === indexInArray ? '.. ' : ` ${numbersArray[i]} `;
@@ -25,12 +27,11 @@ const outputArrayAsString = (numbersArray, indexInArray) => {
 };
 
 export const getQuestionAnswerPair = () => {
-  const firstNumber = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
-  const commonDifference = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
-  const array = generateArithmeticProgression(firstNumber, commonDifference,
-    arithmeticProgressionArrayLength);
+  const firstNumber = gameEngine.generateRandomNumber(lowerLimit, upperLimit);
+  const commonDifference = gameEngine.generateRandomNumber(lowerLimit, upperLimit);
+  const array = generateArithmeticProgression(firstNumber, commonDifference);
   const randomIndex = gameEngine.generateRandomNumber(0, array.length);
-  return { question: outputArrayAsString(array, randomIndex), answer: array[randomIndex] };
+  return { question: getQuestion(array, randomIndex), answer: array[randomIndex] };
 };
 
 export const gameRunner = () => {
