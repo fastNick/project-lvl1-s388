@@ -1,16 +1,18 @@
 import * as gameEngine from '..';
 
+import { generateRandomNumber } from '../utils';
+
 const description = ' \nWhat is the result of the expression?';
 
 const maxnumberForRandomvalue = 20;
 
 const operationsArray = ['+', '-', '*'];
 
-const generateRandomOperator = operatorsList => gameEngine.getRandomElementInArray(operatorsList);
+const generateRandomOperator = array => array[generateRandomNumber(0, array.length)];
 
-export const getQuestionAnswerPair = () => {
-  const firstOperand = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
-  const secondOperand = gameEngine.generateRandomNumber(0, maxnumberForRandomvalue);
+const getQuestionAnswerPair = () => {
+  const firstOperand = generateRandomNumber(0, maxnumberForRandomvalue);
+  const secondOperand = generateRandomNumber(0, maxnumberForRandomvalue);
   const mathOperation = generateRandomOperator(operationsArray);
   let operationResult;
 
@@ -30,3 +32,5 @@ export const getQuestionAnswerPair = () => {
 export const gameRunner = () => {
   gameEngine.implementGameLogic(description, getQuestionAnswerPair);
 };
+
+export default gameRunner;

@@ -7,26 +7,11 @@ export const introduceUser = () => {
   console.log(`Hello, ${userName}!\n`);
   return userName;
 };
-export const outputWelcome = (welcomeText) => {
-  console.log(welcomeText);
-};
 
-export const outputGameDescription = (gameDescriptionText) => {
-  console.log(gameDescriptionText);
-};
+const getUserAnswer = () => readlineSync.question('Your answer: ');
 
-export const getUserAnswer = () => readlineSync.question('Your answer: ');
-
-export const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n`
+const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n`
 + `Let's try again, ${userName}!`);
-
-export const outputFroCorrectAnswer = () => console.log('Correct!');
-
-
-export const generateRandomNumber = (lowerBoundary, upperBoundary) => lowerBoundary
-+ Math.floor(Math.random() * (upperBoundary - lowerBoundary));
-
-export const getRandomElementInArray = array => array[Math.floor(Math.random() * array.length)];
 
 export const implementGameLogic = (gameDescription, getQuestionAnswerPair) => {
   console.log('\nWelcome to the Brain Games!');

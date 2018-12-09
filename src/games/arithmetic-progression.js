@@ -1,5 +1,7 @@
 import * as gameEngine from '..';
 
+import { generateRandomNumber } from '../utils';
+
 const description = '\nWhat number is missing in the progression?';
 
 const sequenceLength = 10;
@@ -26,14 +28,16 @@ const getQuestion = (numbersArray, indexInArray) => {
   return stringSequence;
 };
 
-export const getQuestionAnswerPair = () => {
-  const firstNumber = gameEngine.generateRandomNumber(lowerLimit, upperLimit);
-  const commonDifference = gameEngine.generateRandomNumber(lowerLimit, upperLimit);
+const getQuestionAnswerPair = () => {
+  const firstNumber = generateRandomNumber(lowerLimit, upperLimit);
+  const commonDifference = generateRandomNumber(lowerLimit, upperLimit);
   const array = generateArithmeticProgression(firstNumber, commonDifference);
-  const randomIndex = gameEngine.generateRandomNumber(0, array.length);
+  const randomIndex = generateRandomNumber(0, array.length);
   return { question: getQuestion(array, randomIndex), answer: array[randomIndex] };
 };
 
 export const gameRunner = () => {
   gameEngine.implementGameLogic(description, getQuestionAnswerPair);
 };
+
+export default gameRunner;
