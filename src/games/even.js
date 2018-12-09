@@ -2,7 +2,7 @@ import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
-const gameName = 'EVEN';
+import { EVEN as gameName } from '../constants';
 
 const dictionaryAnswers = { true: 'yes', false: 'no' };
 

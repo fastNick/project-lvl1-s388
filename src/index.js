@@ -1,9 +1,7 @@
 import readlineSync from 'readline-sync';
-
-const CALC = 'CALC';
-const EVEN = 'EVEN';
-const GCD = 'GCD';
-const ARITHEMIC_PROGRESSION = 'ARITHEMIC_PROGRESSION';
+import {
+  ARITHEMIC_PROGRESSION, CALC, GCD, EVEN,
+} from './constants';
 
 const getGameData = (gameName) => {
   switch (gameName) {
@@ -27,8 +25,6 @@ export const introduceUser = () => {
   return userName;
 };
 
-const getUserAnswer = () => readlineSync.question('Your answer: ');
-
 const outputForWrongAnswer = (userAnswer, correctAnswer, userName) => console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n`
 + `Let's try again, ${userName}!`);
 
@@ -40,7 +36,7 @@ export const implementGameLogic = (getQuestionAnswerPair, gameName) => {
   for (let i = 0; i < gameData.countOfRounds; i += 1) {
     const questionAnswerPair = getQuestionAnswerPair();
     console.log(questionAnswerPair.question);
-    const userAnswer = getUserAnswer();
+    const userAnswer = readlineSync.question('Your answer: ');
     const isAnswerCorrect = String(userAnswer) === String(questionAnswerPair.answer);
     if (!isAnswerCorrect) {
       outputForWrongAnswer(userAnswer, questionAnswerPair.answer, userName);

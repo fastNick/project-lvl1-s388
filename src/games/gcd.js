@@ -2,8 +2,7 @@ import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
-const gameName = 'GCD';
-
+import { GCD as gameName } from '../constants';
 
 const upperLimit = 20;
 const lowerLimit = 0;

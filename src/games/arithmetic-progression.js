@@ -2,7 +2,7 @@ import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
-const gameName = 'ARITHEMIC_PROGRESSION';
+import { ARITHEMIC_PROGRESSION as gameName } from '../constants';
 
 const sequenceLength = 10;
 
