@@ -1,4 +1,4 @@
-import * as gameEngine from '..';
+import { implementGameLogic } from '..';
 
 import { generateRandomNumber } from '../utils';
 
@@ -22,7 +22,7 @@ const getQuestionAnswerPair = () => {
 };
 
 export const gameRunner = () => {
-  gameEngine.implementGameLogic(description, getQuestionAnswerPair);
+  implementGameLogic(description, getQuestionAnswerPair);
 };
 
 export default gameRunner;

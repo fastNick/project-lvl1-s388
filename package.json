@@ -37,7 +37,7 @@
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-arithmetic-progression": "dist/bin/brain-arithmetic-progression.js"
+    "brain-arithmetic-progression": "dist/bin/brain-arithmetic-progression.js"    
   },
   "files": [
     "dist"

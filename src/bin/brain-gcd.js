@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import * as gameTask from '../games/gcd';
+import { gameRunner } from '../games/gcd';
 
-gameTask.gameRunner();
+gameRunner();

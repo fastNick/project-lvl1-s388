@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import * as gameTask from '../games/even';
+import { gameRunner } from '../games/even';
 
-gameTask.gameRunner();
+gameRunner();

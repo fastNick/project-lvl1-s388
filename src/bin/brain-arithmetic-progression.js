@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import * as gameTask from '../games/arithmetic-progression';
+import { gameRunner } from '../games/arithmetic-progression';
 
-gameTask.gameRunner();
+gameRunner();
