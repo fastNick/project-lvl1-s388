@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx babel-node -- src/bin/brain-arithmetic-progression.js
+	npx babel-node -- src/bin/brain-gcd.js
 
 publish:
 	npm publish
